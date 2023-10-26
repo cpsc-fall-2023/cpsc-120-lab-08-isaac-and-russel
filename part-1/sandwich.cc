@@ -1,7 +1,7 @@
 // Russel Brown
 // erusselbrown@csu.fullerton.edu
 // @erusselbrown
-// Partners: @pratishthasoni
+// Partners: @Mr1saac
 
 #include <iostream>
 #include <string>
