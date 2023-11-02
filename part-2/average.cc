@@ -8,22 +8,17 @@
 #include <vector>
 
 int main(int argc, char* argv[]) {
-  std::vector<std::string> arguments(argv + 1, argv + argc);
-
-  if (arguments.empty()) {
-    std::cerr << "Error: Please provide at least one command line argument."
-              << std::endl;
+  std::vector<std::string> arguments{argv, argv + argc};
+  if (argc <= 1) {
+    std::cout << "error: you must supply at least one number\n";
     return 1;
   }
-
-  double sum = 0;
-  for (size_t i = 0; i < arguments.size(); i++) {
+  double sum = 0.0;
+  for (int i = 1; i < argc; i++) {
     sum += std::stod(arguments[i]);
   }
-
-  double average = sum / static_cast<double>(arguments.size());
-
-  std::cout << "average = " << average << std::endl;
-
+  double average = 0.0;
+  average = sum / (argc - 1);
+  std::cout << "average = " << average << "\n";
   return 0;
 }
